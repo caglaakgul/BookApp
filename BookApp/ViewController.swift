@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+   
 
-    override func viewDidAppear(_ animated: Bool) {
+        override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if Auth.auth().currentUser != nil{
@@ -46,5 +48,6 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-}
 
+
+}
