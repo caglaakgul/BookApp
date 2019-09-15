@@ -37,12 +37,6 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "toMainVC", sender: nil)
     }
     
-   
-    @IBAction func signUpButton(_ sender: Any) {
-        performSegue(withIdentifier: "toRegisterVC", sender: nil)
-    }
-    
-    
     
     
     func makeAlert(titleInput: String, messageInput: String) {
