@@ -31,10 +31,6 @@ class MainPageViewController: UIViewController{
         
         let firestoreDatabase = Firestore.firestore()
         
-        //date de hata alırsan ekle
-        /*let settings = firestoreDatabase.settings
-         settings.areTimestampsInSnapshotsEnabled = true
-         firestoreDatabase.settings = settings */
         
         firestoreDatabase.collection("Posts").addSnapshotListener { (snapshot, error) in
             if error != nil {
