@@ -54,7 +54,7 @@ class SharingPageViewController: UIViewController, UIImagePickerControllerDelega
             
             let uuid = UUID().uuidString //unic değer verecek
             
-            //let imageReference = mediaFolder.child("image.jpg") //bu şekilde her görsel aynı ada sahip olur. id kullanmamız gereklidir.
+            //let imageReference = mediaFolder.child("image.jpg") 
             let imageReference = mediaFolder.child("\(uuid).jpg")
             
             imageReference.putData(data, metadata: nil) { (metadata, error) in
@@ -64,11 +64,10 @@ class SharingPageViewController: UIViewController, UIImagePickerControllerDelega
                 }else{
                     imageReference.downloadURL(completion: { (url, error) in
                         if error == nil{
-                            let imageUrl = url?.absoluteString //url yi stringe çevir
-                            //print(imageUrl)
+                            let imageUrl = url?.absoluteString 
+                            
                             
                             //DATABASE
-                            //kullanıcının yazdığı yorumu, görselin urlsini ve tarihi veritabanına kaydetme işlemi burada gerçekleşecek
                             
                             let firestoreDatabase = Firestore.firestore()
                             
@@ -82,7 +81,7 @@ class SharingPageViewController: UIViewController, UIImagePickerControllerDelega
                                 } else {
                                     self.imageView.image = UIImage(named: "plus.png")
                                     self.commentText.text = ""
-                                    //tab bar daki 0->anasayfa, 1->paylaşma, 2->ayarlar
+                                    
                                     self.tabBarController?.selectedIndex = 0
                                 }
                             })
