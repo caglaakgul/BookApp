@@ -47,7 +47,6 @@ class SharingPageViewController: UIViewController, UIImagePickerControllerDelega
         let storage = Storage.storage()
         let storageReference = storage.reference()
         
-        //kod ile firebase'de dosya oluşturma
         let mediaFolder = storageReference.child("media")
         
         if let data = imageView.image?.jpegData(compressionQuality: 0.5){
